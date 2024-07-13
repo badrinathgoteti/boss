@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Compatible Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .header .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .header .options {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .options button {
+            background-color: #575757;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .header .options button:hover {
+            background-color: #777;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: calc(100vh - 50px);
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #575757;
+        }
+
+        .scrolling-text {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            white-space: nowrap;
+            overflow: hidden;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-text 15s linear infinite;
+        }
+
+        @keyframes scroll-text {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-title">
+            <img src="lsa.jpg" alt="Logo">
+            <h1>LUCKNOW SWACHHATA ABHIYAN</h1>
+        </div>
+        <div class="options">
+            <button onclick="changeBackground()">Change Background</button>
+            <button>Logout</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="form-container">
+            <h2>Login</h2>
+            <form action="option1.html">
+                <div class="form-group">
+                    <label for="mobileNo">Mobile No:</label>
+                    <input type="text" id="mobileNo" name="mobileNo" maxlength="10">
+                </div>
+                <div class="form-group">
+                    <button type="button">Generate OTP</button>
+                </div>
+                <div class="form-group">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" id="otp" name="otp" maxlength="6">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="scrolling-text">
+        <span>Alert: The city cleaning drive is scheduled for this weekend. Stay tuned for updates! &nbsp;&nbsp;&nbsp; News: New recycling bins are being installed in various parts of the city.</span>
+    </div>
+
+    <script>
+        function changeBackground() {
+            const colors = ['#f4f4f4', '#e0e0e0', '#d1e0e0', '#d1e0d1'];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html>
